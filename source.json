@@ -1,27 +1,24 @@
 {
-    "name":"Example Listing",
-    "id":"com.vrchat.example-listing",
-    "url":"https://vrchat-community.github.io/template-package-listing/index.json",
+    "name":"kb10uy VRChat Package Repository",
+    "id":"org.kb10uy.vrc-repository",
+    "url":"https://kb10uy.github.io/vrc-repository/index.json",
     "author":{
-        "email":"developer@vrchat.com",
-        "name":"VRChat",
-        "url":"https://hello.vrchat.com"
+        "email":"kb10uy@kb10uy.org",
+        "name":"kb10uy",
+        "url":"https://kb10uy.org"
     },
-    "description":"Example listing of VRChat packages",
+    "description":"Various(?) assets and tools for VRChat, provided by kb10uy",
     "infoLink":{
-        "url":"http://github.com/vrchat-community/template-package-listing",
+        "url":"http://github.com/kb10uy/vrc-repository",
         "text":"View on GitHub"
     },
-    "bannerUrl":"banner.png",
-    "githubRepos":[
-        "vrchat-community/clientsim"
-    ],
+    "bannerUrl":"banner.jpg",
+    "githubRepos":[],
     "packages":[
         {
-            "name":"com.vrchat.udonsharp",
+            "name":"org.kb10uy.liltoon-msdfmask",
             "releases":[
-                "https://github.com/vrchat-community/UdonSharp/releases/download/1.1.7/com.vrchat.UdonSharp.zip",
-                "https://github.com/vrchat-community/UdonSharp/releases/download/1.1.6/com.vrchat.UdonSharp-1.1.6.zip"
+                "https://github.com/kb10uy/liltoon-msdfmask/releases/download/1.4.1-p5/org.kb10uy.liltoon-msdfmask-1.4.1-p5.zip"
             ]
         }
     ]
