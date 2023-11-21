@@ -20,6 +20,12 @@
             "releases":[
                 "https://github.com/kb10uy/liltoon-msdfmask/releases/download/1.4.1-p5/org.kb10uy.liltoon-msdfmask-1.4.1-p5.zip"
             ]
+        },
+        {
+            "name":"org.kb10uy.declavatar",
+            "releases":[
+                "https://github.com/kb10uy/modular-declavatar/releases/download/0.8.0/org.kb10uy.declavatar-0.8.0.zip"
+            ]
         }
     ]
 }
