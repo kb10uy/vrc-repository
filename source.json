@@ -18,6 +18,7 @@
         {
             "name":"org.kb10uy.liltoon-msdfmask",
             "releases":[
+                "https://github.com/kb10uy/liltoon-msdfmask/releases/download/2.1.0/org.kb10uy.liltoon-msdfmask-2.1.0.zip",
                 "https://github.com/kb10uy/liltoon-msdfmask/releases/download/2.0.0/org.kb10uy.liltoon-msdfmask-2.0.0.zip",
                 "https://github.com/kb10uy/liltoon-msdfmask/releases/download/1.5.0-p7/org.kb10uy.liltoon-msdfmask-1.5.0-p7.zip",
                 "https://github.com/kb10uy/liltoon-msdfmask/releases/download/1.5.0-p6/org.kb10uy.liltoon-msdfmask-1.5.0-p6.zip",
@@ -27,6 +28,7 @@
         {
             "name":"org.kb10uy.declavatar",
             "releases":[
+                "https://github.com/kb10uy/modular-declavatar/releases/download/1.2.0-beta.2/org.kb10uy.declavatar-1.2.0-beta.2.zip",
                 "https://github.com/kb10uy/modular-declavatar/releases/download/1.2.0-beta.1/org.kb10uy.declavatar-1.2.0-beta.1.zip",
                 "https://github.com/kb10uy/modular-declavatar/releases/download/1.1.0/org.kb10uy.declavatar-1.1.0.zip",
                 "https://github.com/kb10uy/modular-declavatar/releases/download/1.0.0/org.kb10uy.declavatar-1.0.0.zip",
