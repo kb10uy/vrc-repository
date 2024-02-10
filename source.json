@@ -36,6 +36,12 @@
                 "https://github.com/kb10uy/modular-declavatar/releases/download/1.1.0/org.kb10uy.declavatar-1.1.0.zip",
                 "https://github.com/kb10uy/modular-declavatar/releases/download/1.0.0/org.kb10uy.declavatar-1.0.0.zip"
             ]
+        },
+        {
+            "name":"org.kb10uy.declavatar.attachments",
+            "releases":[
+                "https://github.com/kb10uy/declavatar-attachments/releases/download/0.1.0/org.kb10uy.declavatar.attachments-0.1.0.zip"
+            ]
         }
     ]
 }
