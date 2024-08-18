@@ -45,6 +45,12 @@
             "releases":[
                 "https://github.com/kb10uy/declavatar-attachments/releases/download/0.1.0/org.kb10uy.declavatar.attachments-0.1.0.zip"
             ]
+        },
+        {
+            "name":"org.kb10uy.eye-pointer-installer",
+            "releases":[
+                "https://github.com/kb10uy/eye-pointer-installer/releases/download/1.0.0/org.kb10uy.eye-pointer-installer.1.0.0.zip"
+            ]
         }
     ]
 }
