@@ -52,6 +52,12 @@
             "releases":[
                 "https://github.com/kb10uy/eye-pointer-installer/releases/download/1.0.0/org.kb10uy.eye-pointer-installer.1.0.0.zip"
             ]
+        },
+        {
+            "name":"org.kb10uy.zatools",
+            "releases":[
+                "https://github.com/kb10uy/kb10uy-zatools/releases/download/1.0.0/org.kb10uy.zatools.1.0.0.zip"
+            ]
         }
     ]
 }
