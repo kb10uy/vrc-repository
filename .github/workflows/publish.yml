@@ -31,7 +31,7 @@ jobs:
           restore-keys: listing-
 
       - name: Build the listing
-        uses: kb10uy/vpmrepo-neobuilder@v1
+        uses: kb10uy/vpmrepo-neobuilder@v0.1.0
         with:
           source: source.toml
           index: static/index.json
