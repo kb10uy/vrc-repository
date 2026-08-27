@@ -1,0 +1,19 @@
+baseURL = "https://kb10uy.github.io/vrc-repository/"
+title = "kb10uy's VPM Repository"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "rss"]
+
+[params]
+description = "Various(?) assets and tools for VRChat, provided by kb10uy"
+
+[[params.links]]
+name = "GitHub"
+url = "https://github.com/kb10uy/vrc-repository"
+
+[minify]
+minifyOutput = true
+
+[module]
+[[module.imports]]
+path = "github.com/kb10uy/vpmrepo-neobuilder/site-template"

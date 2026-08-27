@@ -1,43 +1,74 @@
-# VPM Package Listing Template
+# VPM repository
 
-Starter for making your own Package Listings, including automation for building and publishing them.
+A VRChat package repository, published to GitHub Pages. Everything is built by
+[vpmrepo-neobuilder][nb]: the listing at `<site>/index.json` that VCC, vrc-get
+and ALCOM consume, and the landing page that lists the packages for humans.
 
-Once you're all set up, you'll be able to update the `source.json` file, and generate a listing which works in the VPM for delivering updates for all the listed packages.
+This repository holds configuration only. The layouts, stylesheet and
+translations live in the [`site-template`][st] Hugo Module and arrive at build
+time, so updates to the site's appearance come from `hugo mod get -u` rather
+than from copying files around.
 
-## ▶ Getting Started
+[nb]: https://github.com/kb10uy/vpmrepo-neobuilder
+[st]: https://github.com/kb10uy/vpmrepo-neobuilder/tree/main/site-template
 
-* Press [![Use This Template](https://user-images.githubusercontent.com/737888/185467681-e5fdb099-d99f-454b-8d9e-0760e5a6e588.png)](https://github.com/vrchat-community/template-package-listing/generate)
-to start a new GitHub project based on this template, and follow the directions there. 
-  * Choose a fitting repository name and description.
-  * Set the visibility to 'Public'. You can also choose 'Private' and change it later.
-  * You don't need to select 'Include all branches.'
-* Edit this project on GitHub in your web browser, or clone it repository locally using Git.
-  * If you're unfamiliar with Git and GitHub, [visit GitHub's documentation](https://docs.github.com/en/get-started/quickstart/
-  
-## Setting up the Automation
+## Setting it up
 
-You'll need to edit some of the files in this template, starting with [`source.json`](source.json):
-- Fill out general information about your listing, such as the `name`, `id`, `author`, `description`, etc.
-- Make sure to update the "url" field on line 4, replacing "vrchat-community" with your GitHub username, and "template-package-listing" with your repo name. This is the link that will be used to download your listing once it's published by GitHub. For example, the user "thupper" who made a repo called "thupper-listing" would update the url to "https://thupper.github.io/thupper-listing/index.json".
-- Update the "url" within "infoLink" (on line 11) with the url of this new repo you've created.
-- If you'd like to include packages hosted on GitHub, specify them in `githubRepos`.
-- If you'd like to include packages hosted elsewhere as a `.zip` file, specify them in `packages`.
-  - You can safely remove either `githubRepos` or `packages` if you're not using them. 
-- Finally, go to the "Settings" page for your repo, then choose "Pages", and look for the heading "Build and deployment". Change the "Source" dropdown from "Deploy from a branch" to "GitHub Actions".
+1. Click **Use this template** and create your own repository.
 
-## 📃 Rebuilding the Listing
+2. Edit `source.toml`. `[listing] url` has to name the published listing, which
+   is `<your Pages URL>/index.json`. Replace the example `[[github]]` entry with
+   the repositories you publish. Every key is documented in the
+   [design document][design].
 
-Whenever you make a change to the `main` branch, or when you trigger it manually, the 'Build Repo Listing' action will make a new index of all the releases available and publish them as a website hosted fore free on GitHub Pages. This listing can be used by the VPM to keep your package up to date, and the generated index page can serve as a simple landing page with info for your package. The URL for your package will be in the format https://username.github.io/repo-name.
+3. Edit `hugo.toml`. `baseURL` has to be your Pages URL, and `title`,
+   `params.description` and `params.links` are yours to fill in.
 
-## 🏠 Customizing the Landing Page
+4. Point the module at your own repository name, and record the version of the
+   site template you are on:
 
-The contents of the `Website` directory can be customized to change the appearance of the landing page. Most of the information will be automatically filled in with information from [`source.json`](source.json). Customizing the landing page by hand is not required.
+   ```sh
+   hugo mod init github.com/<owner>/<repository>
+   hugo mod get github.com/kb10uy/vpmrepo-neobuilder/site-template
+   git add go.mod go.sum && git commit -m "Pin the site template"
+   ```
 
-## Technical Stuff
+5. In **Settings → Pages**, set **Source** to **GitHub Actions**.
 
-You are welcome to make your own changes to the automation process to make it fit your needs, and you can create Pull Requests if you have some changes you think we should adopt. Here's some more info on the included automation:
+6. Push to `main`. The workflow rebuilds on every push, once a day, and on
+   demand from the Actions tab.
 
-### Build Listing
-[build-listing.yml](.github/workflows/build-listing.yml)
+[design]: https://github.com/kb10uy/vpmrepo-neobuilder/blob/main/docs/design.md
 
-This is a composite action which builds a vpm-compatible [Repo Listing](https://vcc.docs.vrchat.com/vpm/repos) based on the items you've added to your `source.json` file. you've created. In order to find all your releases and combine them into a listing, it checks out [another repository](https://github.com/vrchat-community/package-list-action) which has a [Nuke](https://nuke.build/) project which includes the VPM core lib to have access to its types and methods. This project will be expanded to include more functionality in the future - for now, the action just calls its `BuildRepoListing` target, which calls `RebuildHomePage` when it completes. If you wanted to make an action that just rebuilds the home page, you could call that directly instead - just copy the existing call and replace the target names.
+## What the build does
+
+```text
+source.toml ──neobuilder──> static/index.json   the VPM listing, served verbatim
+                        └─> data/listing.json   what the pages render
+                                    │
+                            hugo ───┴─────────> public/
+```
+
+Neither generated file is committed; both are rebuilt from `source.toml` every
+time. The previous `index.json` is restored from the Actions cache and passed as
+`--cache`, which lets the build skip re-downloading archives it has already
+hashed. Losing that cache costs time and nothing else.
+
+## Local preview
+
+```sh
+vpmrepo-neobuilder build --source source.toml static/index.json data/listing.json
+hugo server
+```
+
+`hugo server` on its own works too and shows a repository with no packages.
+Building the site needs Go on `PATH`, because `hugo mod` shells out to it.
+
+## Updating the site template
+
+```sh
+hugo mod get -u github.com/kb10uy/vpmrepo-neobuilder/site-template
+```
+
+Commit the resulting `go.mod` and `go.sum`. The `hugo.toml` keys the module
+expects are listed in [its README][st].

@@ -1,2 +1,5 @@
-﻿.idea
-.vscode
+/public/
+/resources/_gen/
+/.hugo_build.lock
+/data/listing.json
+/static/index.json

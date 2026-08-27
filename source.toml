@@ -1,0 +1,57 @@
+[listing]
+id     = "org.kb10uy.vrc-repository"
+name   = "kb10uy VRChat Package Repository"
+url    = "https://kb10uy.github.io/vrc-repository/index.json"
+author = "kb10uy"
+
+
+[[group]]
+id          = "packages"
+name        = "Packages"
+description = "Packages published by this repository."
+
+[[group]]
+id          = "deprecated"
+name        = "Deprecated"
+description = "Deprecated packages, distributed only for compatibility."
+
+[[group]]
+id          = "dependencies"
+name        = "Dependencies"
+description = "Redistributed for dependency resolution."
+
+
+[[github]]
+repo         = "kb10uy/kb10uy-zatools"
+project-type = "avatar"
+
+[[github]]
+repo         = "kb10uy/liltoon-msdfmask"
+project-type = "avatar"
+
+[[github]]
+repo         = "kb10uy/modular-declavatar"
+project-type = "avatar"
+
+[[github]]
+repo = "kb10uy/declavatar-attachments"
+project-type = "avatar"
+
+
+[[github]]
+repo = "kb10uy/eye-pointer-installer"
+project-type = "avatar"
+group = "deprecated"
+
+
+[[github]]
+repo = "bdunderscore/ndmf"
+group = "dependencies"
+
+[[github]]
+repo = "bdunderscore/modular-avatar"
+group = "dependencies"
+
+[[github]]
+repo = "lilxyzw/lilToon"
+group = "dependencies"
