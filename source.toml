@@ -30,6 +30,10 @@ repo         = "kb10uy/liltoon-msdfmask"
 project-type = "avatar"
 
 [[github]]
+repo = "kb10uy/declavatar2-vrchat"
+project-type = "avatar"
+
+[[github]]
 repo         = "kb10uy/modular-declavatar"
 project-type = "avatar"
 
