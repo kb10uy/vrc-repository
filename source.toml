@@ -33,14 +33,16 @@ project-type = "avatar"
 repo = "kb10uy/declavatar2-vrchat"
 project-type = "avatar"
 
+
 [[github]]
 repo         = "kb10uy/modular-declavatar"
 project-type = "avatar"
+group = "deprecated"
 
 [[github]]
 repo = "kb10uy/declavatar-attachments"
 project-type = "avatar"
-
+group = "deprecated"
 
 [[github]]
 repo = "kb10uy/eye-pointer-installer"
