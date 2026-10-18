@@ -55,6 +55,7 @@ group = "dependencies"
 [[github]]
 repo = "bdunderscore/modular-avatar"
 group = "dependencies"
+versions = ">=1.0.0"
 
 [[github]]
 repo = "lilxyzw/lilToon"
